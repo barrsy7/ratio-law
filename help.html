@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ratio Law — AQA A-Level Law Revision</title>
-  <meta name="description" content="Notes, cases and practice questions for AQA A-Level Law, papers 1–3.">
+  <title>Help & Contact — Ratio Law</title>
+  <meta name="description" content="How to use Ratio Law and how to get in touch.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -89,46 +89,72 @@
 
   <main>
 
-    <section class="hero">
-      <span class="hero-mark" aria-hidden="true">&sect;</span>
-      <div class="wrap hero-inner">
-        <h1>Welcome to Ratio Law</h1>
-        <p class="lede">
-          Clear notes, key cases and exam-style questions covering
-          the full AQA A-Level Law specification — Papers 1 to 3.
+    <section class="hub-banner">
+      <div class="wrap">
+        <p class="section-mark">Help</p>
+        <h1>Help &amp; contact</h1>
+        <p class="hub-lede">
+          What Ratio Law offers, and how to get in touch.
         </p>
       </div>
-
-      <button class="scroll-cue" id="scrollCue" aria-label="Scroll down">
-        <svg viewBox="0 0 20 12"><path d="M1 1L10 10L19 1"/></svg>
-      </button>
     </section>
 
-    <section class="offer wrap" aria-label="What Ratio Law offers">
-      <p class="section-mark">What's here</p>
-      <h2 class="section-heading">Notes, cases and practice — in one place</h2>
-
+    <section class="hub-list wrap" aria-label="Services">
       <a href="notes.html" class="hub-row hub-accent-2">
         <div class="hub-label">
-          <p class="hub-num">Notes</p>
-          <h3>Topic-by-topic, matched to the spec</h3>
+          <p class="hub-num">Service</p>
+          <h3>Notes</h3>
         </div>
+        <ul class="hub-chips"><li>Topic-by-topic notes matched to the AQA spec</li></ul>
         <span class="hub-tag">View &rarr;</span>
       </a>
       <a href="case-bank.html" class="hub-row hub-accent-1">
         <div class="hub-label">
-          <p class="hub-num">Case Bank</p>
-          <h3>Every case, ready to cite</h3>
+          <p class="hub-num">Service</p>
+          <h3>Case Bank</h3>
         </div>
+        <ul class="hub-chips"><li>Facts, principle and ratio for every case</li></ul>
         <span class="hub-tag">View &rarr;</span>
       </a>
       <a href="practice.html" class="hub-row hub-accent-3">
         <div class="hub-label">
-          <p class="hub-num">Practice Questions</p>
-          <h3>Sorted by mark value</h3>
+          <p class="hub-num">Service</p>
+          <h3>Practice Questions</h3>
         </div>
+        <ul class="hub-chips"><li>Exam-style questions sorted by mark value</li></ul>
         <span class="hub-tag">View &rarr;</span>
       </a>
+    </section>
+
+    <section class="journey wrap" aria-label="How the menu works">
+      <p class="section-mark">Using the site</p>
+      <h2 class="section-heading">How to find things</h2>
+      <div class="journey-body">
+        <p>
+          Hover Notes, Case Bank or Practice Questions in the top
+          menu to preview their contents. Click the heading itself
+          to reach that section's overview page, or click a specific
+          paper or mark value to go straight there.
+        </p>
+        <p>
+          Everything is being built topic by topic — pages marked
+          "Coming soon" are planned but not written yet.
+        </p>
+      </div>
+    </section>
+
+    <section class="journey wrap" aria-label="Contact">
+      <p class="section-mark">Get in touch</p>
+      <h2 class="section-heading">Questions, feedback, or spotted an error?</h2>
+      <div class="journey-body">
+        <p>
+          Ratio Law is a solo student project, so responses might
+          take a little while, but every message gets read.
+        </p>
+        <p>
+          <a href="mailto:contact@ratiolaw.example" class="footer-link">contact@ratiolaw.example</a>
+        </p>
+      </div>
     </section>
 
   </main>
@@ -240,10 +266,6 @@
     }, { threshold: 0.15 });
 
     revealTargets.forEach(el => observer.observe(el));
-
-    document.getElementById('scrollCue').addEventListener('click', () => {
-      document.querySelector('.offer').scrollIntoView({ behavior: 'smooth' });
-    });
 
   </script>
 

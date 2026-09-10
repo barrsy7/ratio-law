@@ -7,13 +7,13 @@
   <meta name="description" content="AQA A-Level Law case bank for Paper 3: Contract.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
   <nav class="site-nav">
-    <div class="wrap nav-inner">
+    <div class="nav-inner">
       <a href="index.html" class="mark">Ratio Law</a>
 
       <div class="nav-right">
@@ -82,7 +82,7 @@
           </div>
         </div>
 
-        <button class="menu-help" id="helpToggle">Help</button>
+        <a href="help.html" class="menu-help">Help</a>
       </div>
     </div>
   </nav>
@@ -94,12 +94,14 @@
         <p class="section-mark"><a href="case-bank.html" class="crumb-link">Case Bank</a> &rsaquo; Paper 3</p>
         <h1>Paper 3 &mdash; Contract</h1>
         <p class="hub-lede">
-          Case law for AQA A-Level Law Paper 3: Contract. Cases will
-          be organised under each topic below as they're added.
+          Case law for AQA A-Level Law Paper 3: Contract. Cases will be organised under each topic below as they're added.
         </p>
       </div>
     </section>
-    <section class="hub-list wrap" aria-label="Contract case topics">
+    <section class="wrap flash-section" aria-label="Contract flashcards">
+      
+    </section>
+    <section class="hub-list wrap" aria-label="Contract remaining topics">
       
       <div class="topic-row hub-accent-3">
         <h3>Formation</h3>
@@ -131,7 +133,8 @@
         <p class="footer-title">Ratio Law</p>
         <p class="footer-text">
           An independent, student-made revision resource for AQA
-          A-Level Law (specification 7161/7162).
+          A-Level Law (specification 7161/7162), built one topic at
+          a time while revising for the exams myself.
         </p>
       </div>
 
@@ -167,25 +170,6 @@
   </footer>
 
 
-  <div class="help-overlay" id="helpOverlay">
-    <div class="help-modal">
-      <button class="help-close" id="helpClose" aria-label="Close help">&times;</button>
-      <h2>About this site</h2>
-      <p>
-        Ratio Law is a work-in-progress revision resource for AQA
-        A-Level Law. Hover Notes, Case Bank or Practice Questions in
-        the menu to see their contents, click the heading to reach
-        that section's hub, or click straight through to a specific
-        paper or mark value.
-      </p>
-      <p>
-        Nothing is built yet on the topic pages themselves — they
-        show what's planned. Check back as content gets added topic
-        by topic.
-      </p>
-    </div>
-  </div>
-
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
@@ -220,29 +204,23 @@
       });
     });
 
-    const helpToggle = document.getElementById('helpToggle');
-    const helpOverlay = document.getElementById('helpOverlay');
-    const helpClose = document.getElementById('helpClose');
-
-    function openHelp() {
-      closeMenu();
-      helpOverlay.classList.add('open');
-    }
-    function closeHelp() {
-      helpOverlay.classList.remove('open');
-    }
-
-    helpToggle.addEventListener('click', openHelp);
-    helpClose.addEventListener('click', closeHelp);
-    helpOverlay.addEventListener('click', (e) => {
-      if (e.target === helpOverlay) closeHelp();
-    });
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') { closeMenu(); closeHelp(); }
+      if (e.key === 'Escape') { closeMenu(); }
+    });
+
+    /* Flip cards in the case bank */
+    document.querySelectorAll('.flash-card').forEach(card => {
+      card.addEventListener('click', () => card.classList.toggle('flipped'));
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          card.classList.toggle('flipped');
+        }
+      });
     });
 
     const revealTargets = document.querySelectorAll(
-      '.offer-card, .journey-body, .site-footer, .hub-row, .topic-row'
+      '.site-footer, .hub-row, .topic-row'
     );
     revealTargets.forEach(el => el.classList.add('reveal'));
 
